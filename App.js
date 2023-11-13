@@ -4,6 +4,7 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import { Entypo } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { styles } from "./styles";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAltLPQpfpqASjP44KIc0-uy43h9geAFjs",
@@ -101,114 +102,5 @@ const FirestoreExample = () => {
     </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "white",
-    padding: 10,
-  },
-  title: {
-    alignSelf: "flex-end",
-    fontSize: 30,
-    margin: 25,
-    fontWeight: "bold",
-    fontFamily: "serif",
-    textAlign: "center",
-  },
-  box: {
-    backgroundColor: "#000",
-    height: 130,
-    padding: 15,
-    elevation: 10,
-    margin: 15,
-    borderRadius: 10,
-    paddingBottom: 45,
-  },
-  boxText: {
-    color: "white",
-    fontSize: 20,
-    fontFamily: "serif",
-  },
-  greenText: {
-    color: "green",
-    fontSize: 14,
-    padding: 5,
-    fontFamily: "serif",
-  },
-  tablesRow: {
-    flex: 1,
-    flexDirection: "row",
-    margin: 15,
-    gap: 20,
-  },
-  tables: {
-    backgroundColor: "#feb9eb",
-    height: 80,
-    width: 160,
-    borderRadius: 10,
-    paddingBottom: 20,
-    elevation: 10,
-    shadowOffset: { width: -2, height: 4 },
-    shadowColor: "#171717",
-    shadowOpacity: 0.2,
-    shadowRadius: 3,
-  },
-  tablesTitle: {
-    padding: 10,
-    fontSize: 15,
-    fontWeight: "bold",
-    fontFamily: "serif",
-  },
-  detailsRow: {
-    flex: 4,
-    flexDirection: "row",
-    gap: 20,
-    padding: 15,
-  },
-  menu: {
-    backgroundColor: "whitesmoke",
-    height: 70,
-    width: 100,
-    padding: 20,
-    elevation: 10,
-    borderRadius: 10,
-    shadowOffset: { width: -2, height: 4 },
-    shadowColor: "#171717",
-    shadowOpacity: 0.2,
-    shadowRadius: 3,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  miniBox: {
-    backgroundColor: "#feb9eb",
-    height: 70,
-    width: 100,
-    elevation: 10,
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: 10,
-    shadowOffset: { width: -2, height: 4 },
-    shadowColor: "#171717",
-    shadowOpacity: 0.2,
-    shadowRadius: 3,
-  },
-  styledText: {
-    fontWeight: "bold",
-    fontFamily: "serif",
-  },
-  bigText: {
-    fontWeight: "bold",
-    fontSize: 20,
-    fontFamily: "serif",
-  },
-  tablesText: {
-    fontSize: 25,
-    marginBottom: 10,
-    marginLeft: 10,
-    fontFamily: "serif",
-    fontWeight: "bold",
-  },
-});
 
 export default FirestoreExample;
