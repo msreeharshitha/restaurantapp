@@ -1,18 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
+import DropDownPicker from 'react-native-dropdown-picker';
 
 const App = () => {
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   return (
     <View style={styles.container}>
       <View>
         <Text style={styles.categories}>Categories Name</Text>
       </View>
       <View style={styles.row1}>
-        <Text style={styles.select}>Select a Categories</Text>
-        <View style={styles.icons}>
-          <AntDesign name="down" size={18} color="black" />
-        </View>
+        <DropDownPicker
+          items={[
+            { label: 'Category 1', value: 'category1' },
+            { label: 'Category 2', value: 'category2' },
+            // Add more categories as needed
+          ]}
+          defaultValue={selectedCategory}
+          isVisible={isDropdownOpen}
+          onOpen={() => setIsDropdownOpen(true)}
+          onClose={() => setIsDropdownOpen(false)}
+          containerStyle={{ width: '100%' }}
+          style={{ backgroundColor: '#fafafa' }}
+          itemStyle={{
+            justifyContent: 'flex-start',
+          }}
+          dropDownStyle={{ backgroundColor: '#fafafa' }}
+          onChangeItem={(item) => {
+            setSelectedCategory(item.value);
+            setIsDropdownOpen(false);
+          }}
+        />
       </View>
       <View style={styles.row2}>
         <Text style={styles.add}>ADD</Text>
@@ -28,44 +48,22 @@ const styles = StyleSheet.create({
     gap: 25,
   },
 
-  
-
-  ad: {
-    marginLeft: 10,
-    fontSize: 24,
-  },
-
   categories: {
     fontSize: 18,
     fontWeight: 'bold',
   },
 
   row1: {
-    flexDirection: 'row',
     width: 300,
-    borderRadius: 5,
-    borderWidth: 1, // Use 'borderWidth' instead of 'border'
-    borderColor: 'black',
-    alignItems:'center', 
-    justifyContent: 'center', 
-  },
-
-  select: {
-    fontWeight: 'bold',
-    padding: 15, // Adjust the padding as needed
-    height: 50,
     
-    flex: 1, // Allow the text to take the remaining space
-  },
-
-  icons: {
-    justifyContent: 'center', // Center the icon vertically
-    paddingHorizontal: 10, // Adjust the padding as needed
+alignItems: 'center',
+    justifyContent: 'center',
   },
 
   row2: {
     flexDirection: 'row',
     width: 300,
+    marginTop: 20,
   },
 
   add: {
@@ -73,8 +71,8 @@ const styles = StyleSheet.create({
     color: 'white',
     borderRadius: 5,
     textAlign: 'center',
-    padding: 10, // Adjust the padding as needed
-    flex: 1, // Allow the text to take the remaining space
+    padding: 10,
+    flex: 1,
   },
 });
 
