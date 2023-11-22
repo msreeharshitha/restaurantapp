@@ -13,7 +13,7 @@ const firebaseConfig = {
   databaseURL: "https://react-food-app-test-default-rtdb.firebaseio.com",
   projectId: "react-food-app-test",
   storageBucket: "react-food-app-test.appspot.com",
-  messagingSenderId: "917792936106",
+  messagingSenderId: "917792936106", 
   appId: "1:917792936106:web:305454d4f351eeedd840d3",
   measurementId: "G-9320K6BHRK",
 };
@@ -76,21 +76,27 @@ const Home = () => {
             )}
           </View>
         </TouchableOpacity>
-        <View style={styles.tables}>
-          <Text style={styles.tablesTitle}>Occupied tables</Text>
-          {documentData ? (
-            <Text style={styles.tablesText}>{documentData.occupiedTables}</Text>
-          ) : (
-            <></>
-          )}
-        </View>
+        <TouchableOpacity onPress={() => navigation.navigate("Occupied")}>
+          <View style={styles.tables}>
+            <Text style={styles.tablesTitle}>Occupied Tables</Text>
+            {documentData ? (
+              <Text style={styles.tablesText}>
+                {documentData.occupiedTables}
+              </Text>
+            ) : (
+              <></>
+            )}
+          </View>
+        </TouchableOpacity>
       </View>
 
       <View style={styles.detailsRow}>
+      <TouchableOpacity onPress={() => navigation.navigate("Menu")}>
         <View style={styles.menu}>
           <Text style={styles.styledText}>Menu</Text>
           <Entypo name="bowl" size={20} color="black" />
         </View>
+        </TouchableOpacity>
         <View style={styles.miniBox}>
           <Text style={styles.styledText}>Employees</Text>
           <Text style={styles.bigText}>9</Text>

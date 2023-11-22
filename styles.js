@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     height: 130,
     padding: 15,
     elevation: 10,
-    margin: 15,
+    
     borderRadius: 10,
     paddingBottom: 45,
   },
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     fontFamily: "serif",
   },
   greenText: {
-    color: "green",
+    color: "lightgreen",
     fontSize: 14,
     padding: 5,
     fontFamily: "serif",
@@ -37,8 +37,9 @@ const styles = StyleSheet.create({
   tablesRow: {
     flex: 1,
     flexDirection: "row",
-    margin: 15,
+   marginTop:20,
     gap: 20,
+  
   },
   tables: {
     backgroundColor: "#feb9eb",
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
     flex: 4,
     flexDirection: "row",
     gap: 20,
-    padding: 15,
+    
   },
   menu: {
     backgroundColor: "whitesmoke",
